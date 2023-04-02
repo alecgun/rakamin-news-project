@@ -2,13 +2,16 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
     id 'com.google.secrets_gradle_plugin' version '0.4'
 }
 
 android {
     namespace 'com.rakamin.mandirinewsproject'
     compileSdk 33
+
+    buildFeatures {
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId "com.rakamin.mandirinewsproject"

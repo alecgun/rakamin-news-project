@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.rakamin.mandirinewsproject.databinding.ItemNewsBinding
+import com.rakamin.mandirinewsproject.databinding.ItemHeadlineBinding
 
-class MainAdapter(private var articles: ArrayList<News.Articles>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class HeadlineAdapter(private var articles: ArrayList<News.Articles>) : RecyclerView.Adapter<HeadlineAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemHeadlineBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -25,15 +25,15 @@ class MainAdapter(private var articles: ArrayList<News.Articles>) : RecyclerView
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemHeadlineBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(article: News.Articles) {
-            binding.newsTitle.text = article.title
+            binding.titleheadline.text = article.title
             Glide.with(binding.root)
                 .load(article.urlToImage)
-                .into(binding.newsImage)
-            binding.authorText.text = article.author
-            binding.dateText.text = article.publishedAt
+                .into(binding.imageheadline)
+            binding.headlineauthor.text = article.author
+            binding.headlinedate.text = article.publishedAt
         }
     }
 }
