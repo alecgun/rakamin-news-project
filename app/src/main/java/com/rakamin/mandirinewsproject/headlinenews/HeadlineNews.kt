@@ -1,8 +1,6 @@
-package com.rakamin.mandirinewsproject
+package com.rakamin.mandirinewsproject.headlinenews
 
-import com.google.gson.annotations.SerializedName
-
-data class News(
+data class HeadlineNews(
 
     val status       : String,
     val totalResults : Int,

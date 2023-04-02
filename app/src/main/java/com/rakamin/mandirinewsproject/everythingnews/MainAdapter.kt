@@ -1,4 +1,4 @@
-package com.rakamin.mandirinewsproject
+package com.rakamin.mandirinewsproject.everythingnews
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rakamin.mandirinewsproject.databinding.ItemNewsBinding
 
-class MainAdapter(private var articles: ArrayList<News.Articles>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class MainAdapter(private var articles: ArrayList<EverythingNews.Articles>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -19,7 +19,7 @@ class MainAdapter(private var articles: ArrayList<News.Articles>) : RecyclerView
         holder.bind(articles[position])
     }
 
-    fun setData(data: ArrayList<News.Articles>) {
+    fun setData(data: ArrayList<EverythingNews.Articles>) {
         articles.clear()
         articles.addAll(data)
         notifyDataSetChanged()
@@ -27,7 +27,7 @@ class MainAdapter(private var articles: ArrayList<News.Articles>) : RecyclerView
 
     class ViewHolder(private val binding: ItemNewsBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(article: News.Articles) {
+        fun bind(article: EverythingNews.Articles) {
             binding.newsTitle.text = article.title
             Glide.with(binding.root)
                 .load(article.urlToImage)

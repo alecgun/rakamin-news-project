@@ -1,4 +1,4 @@
-package com.rakamin.mandirinewsproject
+package com.rakamin.mandirinewsproject.headlinenews
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rakamin.mandirinewsproject.databinding.ItemHeadlineBinding
 
-class HeadlineAdapter(private var articles: ArrayList<News.Articles>) : RecyclerView.Adapter<HeadlineAdapter.ViewHolder>() {
+class HeadlineAdapter(private var articles: ArrayList<HeadlineNews.Articles>) : RecyclerView.Adapter<HeadlineAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemHeadlineBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -19,7 +19,7 @@ class HeadlineAdapter(private var articles: ArrayList<News.Articles>) : Recycler
         holder.bind(articles[position])
     }
 
-    fun setData(data: ArrayList<News.Articles>) {
+    fun setData(data: ArrayList<HeadlineNews.Articles>) {
         articles.clear()
         articles.addAll(data)
         notifyDataSetChanged()
@@ -27,7 +27,7 @@ class HeadlineAdapter(private var articles: ArrayList<News.Articles>) : Recycler
 
     class ViewHolder(private val binding: ItemHeadlineBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(article: News.Articles) {
+        fun bind(article: HeadlineNews.Articles) {
             binding.titleheadline.text = article.title
             Glide.with(binding.root)
                 .load(article.urlToImage)
