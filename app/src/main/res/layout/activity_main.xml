@@ -51,6 +51,7 @@
                 android:layout_marginHorizontal="15dp" />
 
             <TextView
+                android:id="@+id/headlineauthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Author"
@@ -60,6 +61,7 @@
                 android:layout_alignParentStart="true"
                 android:textSize="12sp" />
             <TextView
+                android:id="@+id/headlinedate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date"
